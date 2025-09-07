@@ -1,0 +1,48 @@
+------------- Exercice Vue Js ----------------------
+
+Créer une application "To-Do List" Full Stack avec :
+
+ Backend : Laravel (PostgreSQL ou MySQL)
+ Frontend : Vue Js (avec Laravel Echo et Pusher-js) + Pinia (avec shadcn
+pour une interface très moderne)
+ Appels API: Axios
+ Web Sockets : Pusher
+ Canal de diffusion : events broadcast
+ Fonctionnalités : CRUD des tâches + authentification par JWT
+ But pédagogique : apprendre à structurer un projet professionnel, utiliser Vue Js,
+Laravel Echo, et mettre en place une authentification sécurisée.
+
+📝 Cahier des charges
+
+🎯 Fonctionnalités à implémenter
+
+	🔐 Authentification (JWT)
+		 Inscription (POST /api/auth/register) : créer un utilisateur avec full name + email
+		+ phone number + address + image + mot de passe.
+		 Connexion (POST /api/auth/login) : renvoyer un JWT valide si les identifiants sont
+		corrects.
+		 Middleware de protection pour les routes /api/tasks/* :
+		o Seules les requêtes avec un Authorization: Bearer <token> peuvent
+		accéder aux tâches.
+		o Un utilisateur ne voit que ses propres tâches.
+
+	📋 Gestion des tâches (CRUD)
+		 GET /api/tasks : liste les tâches de l'utilisateur connecté.
+		 GET /api/tasks/:id : détail d'une tâche (si elle appartient à l'utilisateur).
+		 POST /api/tasks : ajouter une nouvelle tâche.
+		 PUT /api/tasks/:id : modifier une tâche existante.
+		 DELETE /api/tasks/:id : supprimer une tâche
+
+	📋 Envoie des Messages en temps réel
+		- Après la création de chaque tâche, une notification doit être envoyé.
+		- Créer une page séparer pour reçoie les Notifications qui disent qu’une tâche a
+		été créer avec succès.
+
+	📋 Best Practices
+		- Le code doit être bien documenté
+		- Appliquer les principes SOLID
+		- Appliquer Service et Repository Patterns
+
+	📋 Github
+		Créer un Repo sur Github et faire pusher le code source en ajoutant les étapes à suivre sur
+		Readme pour tester le projet.
